@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class TestController {
-    @GetMapping(path = "/test")
+    @GetMapping(path = "/")
     public ResponseEntity<Object> sayHello()  {  
          
         return ResponseEntity.status(HttpStatus.OK).body("Service UP!");
