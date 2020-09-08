@@ -10,6 +10,6 @@ public class TestController {
     @GetMapping(path = "/")
     public ResponseEntity<Object> sayHello()  {  
          
-        return ResponseEntity.status(HttpStatus.OK).body("Service UP!");
+        return ResponseEntity.status(HttpStatus.OK).body("Service UP v2!");
     }
 }
