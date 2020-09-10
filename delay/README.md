@@ -39,9 +39,9 @@ oc set probe dc/service-delay --readiness --get-url=http://:8080/ --initial-dela
 > oc get pods
 ```
 
-service-delay-4-nsj2k    1/1     Running     0          107s
-service-delay-5-6hs7d    0/1     Running     1          42s
-service-delay-5-deploy   1/1     Running     0          46s
+* service-delay-4-nsj2k    1/1     Running     0          107s
+* service-delay-5-6hs7d    0/1     Running     1          42s
+* service-delay-5-deploy   1/1     Running     0          46s
 
 We see that the pod restarts multiple times and never gets ready because the readiness probe gets no response within the allotted timeout
 
@@ -52,6 +52,6 @@ We see that the pod restarts multiple times and never gets ready because the rea
 
 9. Now we see that the new pod was created and is ready to receive traffic
 
-service-delay-4-nsj2k    0/1     Terminating   0          5m37s
-service-delay-6-deploy   0/1     Completed     0          22s
-service-delay-6-xq9xs    1/1     Running       0          16s
+* service-delay-4-nsj2k    0/1     Terminating   0          5m37s
+* service-delay-6-deploy   0/1     Completed     0          22s
+* service-delay-6-xq9xs    1/1     Running       0          16s
