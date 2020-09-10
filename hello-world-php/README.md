@@ -22,7 +22,7 @@
 4. Create a new app, based on s2i strategy
 
 ```sh
-> oc new-app -i php:7.1 --name=php-helloworld  https://github.com/your_username/examples-openshift  --context-dir php-helloworld
+> oc new-app -i php:7.1 --name=php-helloworld  https://github.com/your_username/examples-openshift  --context-dir php-hello-world
 ```
 
 5. Verify that the build process starts with the oc get pods command
