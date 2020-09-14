@@ -9,7 +9,6 @@ You can find different examples to implement solutions within OpenShift:
 - [Application with Health Checks](./health-check)
 
 Coming soon
-- Application with connection to another services
 - Horizontal Pod Autoscaler
 - Deploy from Templates
 - Jenkins Pipelines + OpenShift
