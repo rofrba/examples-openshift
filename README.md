@@ -6,7 +6,7 @@ You can find different examples to implement solutions within OpenShift:
 - [S2i build](./hello-world-java)
 - [S2i build with changes](./hello-world-php)
 - [S2i custom](./test-s2i)
-- [Application with Health Checks](./delay)
+- [Application with Health Checks](./health-check)
 
 Coming soon
 - Application with connection to another services
