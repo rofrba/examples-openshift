@@ -26,6 +26,13 @@ public class ServiceConnectController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @GetMapping(path = "/")
+    public ResponseEntity<Object> sayHello() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body("Hello");
+    }
+
     @GetMapping(path = "/connect")
     public ResponseEntity<Object> connectTo()  {  
         String result = "";
@@ -49,5 +56,7 @@ public class ServiceConnectController {
   
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
     }
+
+    
 }
 
