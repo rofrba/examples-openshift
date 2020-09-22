@@ -7,8 +7,6 @@ import (
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 	
-	var num int = 0
-
    	incrementar := func() int {
       num++
       return num
@@ -26,7 +24,7 @@ func listenAndServe(port string) {
 }
 
 func main() {
-	
+	num := 0
 	http.HandleFunc("/", helloHandler)
 	go listenAndServe("8080")
 	select {}
