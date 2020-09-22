@@ -20,7 +20,7 @@ func listenAndServe(port string) {
 }
 
 func main() {
-	num := 0
+	i := 0
 	fmt.Println("Request number: " , i+1)
 	http.HandleFunc("/", helloHandler)
 	go listenAndServe("8080")
