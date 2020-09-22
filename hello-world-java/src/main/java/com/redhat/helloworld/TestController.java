@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TestController {
     Logger logger = LoggerFactory.getLogger(TestController.class);
-
+    int i=1;
     @GetMapping(path = "/")
     public ResponseEntity<Object> sayHello()  {  
-        int i=1;
+        
         logger.info("Request number: "+i);
         i++;
     
