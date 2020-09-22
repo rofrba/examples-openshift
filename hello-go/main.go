@@ -4,10 +4,12 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
-func helloHandler(w http.ResponseWriter, r *http.Request, i int) {
-	fmt.Println("Request number: " , i+1)
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+	var now = time.Now()
+	fmt.Println("Time: " , now)
 	fmt.Fprintln(w, "<h1>Hello OpenShift! </h1>")
 	
 }
@@ -21,8 +23,7 @@ func listenAndServe(port string) {
 }
 
 func main() {
-	i:= 0
-	http.HandleFunc("/", helloHandler, i)
+	http.HandleFunc("/", helloHandler)
 	go listenAndServe("8080")
 	select {}
 }
