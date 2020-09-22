@@ -5,19 +5,16 @@ import (
 	"net/http"
 )
 
-func acumular() func() int {
-	var num int = 0
-	return func() int {
-		num++
-		return num
-	}
-}
-
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 	
+	var num int = 0
 
+   	incrementar := func() int {
+      num++
+      return num
+	}
 	fmt.Fprintln(w, "<h1>Hello OpenShift! </h1>")
-	fmt.Println("Request number: " , acumular())
+	fmt.Println("Request number: " , incrementar())
 }
 
 func listenAndServe(port string) {
