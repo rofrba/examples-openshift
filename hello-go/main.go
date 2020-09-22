@@ -6,7 +6,10 @@ import (
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "<h1>Hello OpenShift! Updated build</h1>")
+	var num int = 0
+
+	fmt.Fprintln(w, "<h1>Hello OpenShift! </h1>")
+	fmt.Println("Request number: ",num++)
 }
 
 func listenAndServe(port string) {
@@ -18,6 +21,7 @@ func listenAndServe(port string) {
 }
 
 func main() {
+	
 	http.HandleFunc("/", helloHandler)
 	go listenAndServe("8080")
 	select {}
