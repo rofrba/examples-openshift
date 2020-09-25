@@ -1,4 +1,4 @@
-package main.java.com.redhat.delayinit;
+package com.redhat.delayinit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

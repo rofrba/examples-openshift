@@ -3,13 +3,13 @@
 1. Create project
 
 ```sh
-> oc new-project link-example
+> oc new-project service-delay
 ```
 
 2. Create a new app, based on s2i strategy
 
 ```sh
-> oc new-app --name service-delay -i java:8 https://github.com/rofrba/examples-openshift --context-dir health-check/delay -e DELAY=1
+> oc new-app --name service-delay -i openjdk18-openshift https://github.com/rofrba/examples-openshift --context-dir health-check/delay -e DELAY=1
 ```
 
 3. Expose the service
@@ -55,3 +55,11 @@ We see that the pod restarts multiple times and never gets ready because the rea
 * service-delay-4-nsj2k    0/1     Terminating   0          5m37s
 * service-delay-6-deploy   0/1     Completed     0          22s
 * service-delay-6-xq9xs    1/1     Running       0          16s
+
+
+
+
+NOTA: Si no contamos con la imagen base openjdk18-openshift, debemos ejecutar el comando: 
+```sh
+> oc import-image redhat-openjdk-18/openjdk18-openshift --from=registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift --confirm
+```

@@ -9,7 +9,7 @@
 2. Deploy servicio A que simulará el delay (1 segundo como ejemplo)
 
 ```sh
-> oc new-app --name integration-slave -i java:8 https://github.com/rofrba/examples-openshift --context-dir health-check/delay -e DELAY=1
+> oc new-app --name integration-slave -i openjdk18-openshift https://github.com/rofrba/examples-openshift --context-dir health-check/delay -e DELAY=1
 ```
 
 3. Creamos la ruta para el servicio
@@ -24,7 +24,7 @@
 
 5. Creamos la aplicación master que utilizará al slave
 ```sh
-> oc new-app --name integration-master -i java:8 https://github.com/rofrba/examples-openshift --context-dir health-check/service-a -e SERVICE_B_URL=<url_paso_4>
+> oc new-app --name integration-master -i openjdk18-openshift https://github.com/rofrba/examples-openshift --context-dir health-check/service-a -e SERVICE_B_URL=<url_paso_4>
 ```
 
 5. Creamos el liveness probe para validar el funcionamiento de la aplicación
@@ -50,4 +50,10 @@ oc set probe dc/integration-master --readiness --get-url=http://:8080/connect --
 ```
 
 9. Notaremos que, nuevamente el servicio master funciona correctamente.
+
+
+NOTA: Si no contamos con la imagen base openjdk18-openshift, debemos ejecutar el comando: 
+```sh
+> oc import-image redhat-openjdk-18/openjdk18-openshift --from=registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift --confirm
+```
 
