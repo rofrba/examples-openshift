@@ -9,7 +9,7 @@ public class DelayInitApplication {
 
 	public static void main(String[] args) {
 		try {
-            TimeUnit.SECONDS.sleep(40);
+            TimeUnit.SECONDS.sleep(20);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
