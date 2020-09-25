@@ -19,7 +19,7 @@
 
 4. Configurar los recursos de la aplicación
 ```sh
-> oc set resources deploymentConfig init-delay --limits=cpu=300m,memory=512Mi --requests=cpu=80m,memory=256Mi
+> oc set resources deploymentConfig init-delay --limits=cpu=200m,memory=512Mi --requests=cpu=80m,memory=256Mi
 ```
 
 5. Creamos el liveness probe para validar el funcionamiento de la aplicación
