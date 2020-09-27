@@ -12,4 +12,4 @@ spec:
     apiVersion: v1
     kind: DeploymentConfig
     name: init-delay
-  targetAverageUtilization: 70
+  targetAverageUtilization: 85

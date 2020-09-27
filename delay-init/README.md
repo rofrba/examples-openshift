@@ -19,16 +19,16 @@
 
 4. Configurar los recursos de la aplicación
 ```sh
-> oc set resources deploymentConfig init-delay --limits=cpu=200m,memory=512Mi --requests=cpu=80m,memory=256Mi
+> oc set resources deploymentConfig init-delay --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi
 ```
 
 5. Creamos el liveness probe para validar el funcionamiento de la aplicación
 ```sh
-> oc set probe dc/init-delay --liveness --get-url=http://:8080/ --initial-delay-seconds=80 --timeout-seconds=2 --period-seconds=15
+> oc set probe dc/init-delay --liveness --get-url=http://:8080/ --initial-delay-seconds=60 --timeout-seconds=1 --period-seconds=30
 ```
 6. Creamos el readiness probe para validar la comunicación con el servicio slave
 ```sh
-oc set probe dc/init-delay --readiness --get-url=http://:8080/ --initial-delay-seconds=80 --timeout-seconds=2 --period-seconds=15
+oc set probe dc/init-delay --readiness --get-url=http://:8080/ --initial-delay-seconds=60 --timeout-seconds=1 --period-seconds=30
 ```
 
 7. Crear el recurso Horizontal Pod Autoscaler
