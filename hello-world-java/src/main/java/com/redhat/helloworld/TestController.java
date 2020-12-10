@@ -17,6 +17,6 @@ public class TestController {
         logger.info("Request number: "+i);
         i++;
     
-        return ResponseEntity.status(HttpStatus.OK).body("Service UP v2!");
+        return ResponseEntity.status(HttpStatus.OK).body("Service UP v3!");
     }
 }
