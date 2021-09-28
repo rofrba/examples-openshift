@@ -15,6 +15,7 @@ public class TestController {
     public ResponseEntity<Object> sayHello()  {
 
         logger.info("Request number: "+i);
+
         insert_data("http://www.bussalud.gov.ar", "2021-06-28 15:04:38.561285", null, "http://msgc.gcba.gob.ar", null, null, "masterfile-federacion-service/fhir/Patient");
         insert_data("hospitalitaliano.org.ar", "2021-06-28 15:04:39.127933", null, "sec.salud.muni.cordoba", "51", null, "/masterfile-federacion-service/api/personas/renaper");
         insert_data("hospitalitaliano.org.ar", "2021-06-28 15:04:40.149939", null, "secretaria.tecnologias.gobierno.santafe", "85", null, "/masterfile-federacion-service/api/personas/renaper");
@@ -37,6 +38,7 @@ public class TestController {
         //sub       http://msgc.gcba.gob.ar
         //user_id   null
         //path      masterfile-federacion-service/fhir/Patient
-        logger.info("ISS: " + iss + " CREATED_AT: " + created_at + " SUB: " + sub + " USER_ID: " + user_id + " PATH: " + path);
+        //{"iss": "hospitalitaliano.org.ar","created_at": "2021-06-28 15:04:48.026646","sub": "ministerio.neuquen","user_id": "7","path": "/masterfile-federacion-service/api/personas/renaper"}
+        logger.info("{\"iss\": \"" + iss + "\",\"created_at\": \"" + created_at + "\",\"sub\": \"" + sub + "\",\"user_id\": \"" + user_id + "\",\"path\": \"" + path + "\"}");
     }
 }
