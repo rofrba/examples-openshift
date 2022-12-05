@@ -9,7 +9,7 @@
 2. Create a new app, based on s2i strategy
 
 ```sh
-> oc new-app --name service-delay -i openjdk18-openshift https://github.com/rofrba/examples-openshift --context-dir health-check/delay -e DELAY=1
+> oc new-app --name service-delay -i openjdk18-openshift https://github.com/rofrba/examples-openshift --context-dir health-check/delay -e DELAY=1 --as-deployment-config
 ```
 
 3. Expose the service
