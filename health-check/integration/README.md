@@ -25,7 +25,7 @@
 
 5. Creamos la aplicación master que utilizará al slave
 ```sh
-> oc new-app --name integration-master -i openjdk18-openshift https://github.com/rofrba/examples-openshift --context-dir health-check/service-a -e SERVICE_B_URL=$(SERVICE_B_URL) --as-deployment-config
+> oc new-app --name integration-master -i openjdk18-openshift https://github.com/rofrba/examples-openshift --context-dir health-check/service-a -e SERVICE_B_URL=$SERVICE_B_URL --as-deployment-config
 ```
 
 6. Obtenemos la ruta para controlar el funcionamiento del servicio, conectando con el otro componente.
